@@ -1,4 +1,4 @@
-import { toValue, reactive, toRefs } from 'vue';
+import { toRefs, reactive } from 'vue';
 
 interface State<T> {
   isLoading: boolean;
@@ -6,7 +6,9 @@ interface State<T> {
   errorMsg: string | null;
 }
 
-const useFetch = async <T>(url: string) => {
+type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
+const useFetch = async <T>(url: string, method: HttpMethod = 'GET', body?: any) => {
   const state = reactive<State<T>>({
     isLoading: true,
     data: null,
@@ -17,10 +19,20 @@ const useFetch = async <T>(url: string) => {
     state.isLoading = true;
 
     try {
-      const response = await fetch(toValue(url));
+      const options: RequestInit = {
+        method,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      };
+
+      const response = await fetch(url, options);
+
       if (!response.ok) {
         throw new Error(response.statusText);
       }
+
       state.data = await response.json();
     } catch (error: unknown) {
       const typerError = error as Error;
