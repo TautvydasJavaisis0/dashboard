@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+  line-height: normal;
+  color: var(--primary-subtitle-color);
+  font-family: Roboto;
+}
+
+ul,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(100vw - var(--sibebar-width));
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 3.875rem;
+  font-weight: 500;
+  font-family: Poppins;
+  color: var(--dark-blue-title-color);
+}
+
+h2 {
+  font-family: Poppins;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  color: var(--dark-blue-title-color);
+}
+
+h3 {
+  font-family: Poppins;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: var(--secondary-title-color);
+}
+
+@media (max-width: 100em) {
+  .container {
+    padding-left: 2.875rem;
+    padding-right: 2.875rem;
+  }
+}
+/* tablet */
+@media (max-width: 75em) {
+  .container {
+    max-width: calc(100vw - var(--sibebar-small-width));
+  }
+  h2 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  h3 {
+    font-size: 0.938rem;
+  }
+}
+/* mobile */
+@media (max-width: 43.75em) {
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h1 {
+    font-size: 1.25rem;
+  }
+}
+
+:root {
+  /* layout sizes */
+  --header-small-height: 3.875rem;
+  --header-height: 5.688rem;
+
+  --sibebar-small-width: 5.625rem;
+  --sibebar-width: 15.125rem;
+
+  /* Colors */
+  --background-color: #fafafa;
+  --white: #fff;
+  --color-red: #ff5151;
+  --color-blue: #3786f1;
+  --color-blue-light: rgba(55, 134, 241, 0.3);
+  --color-aliceblue: #e8f0fb;
+  --color-linen: #ffefe7;
+  --primary-subtitle-color: #686868;
+  --secondary-title-color: #303030;
+  --dark-blue-title-color: #161e54;
+  --color-dimgray-100: rgba(104, 104, 104, 0.5);
+  --color-gray-200: rgba(255, 255, 255, 0.8);
+  --color-darkgray: #b3b3b3;
+  --color-lightgray: #b2b2b2;
+  --color-whitesmoke-100: #f1f1f1;
+  --color-gainsboro-200: #e0e0e0;
+  --color-orchid: #ee61cf;
+  --color-orchid-light: #fdebf9;
+  --color-whitesmoke-200: #efefef;
+}
