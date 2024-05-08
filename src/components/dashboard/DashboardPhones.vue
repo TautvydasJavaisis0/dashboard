@@ -57,7 +57,7 @@ const sortedProducts = computed(() => {
     let comparisonValue: number;
     switch (valueType) {
       case 'title':
-        comparisonValue = a.title.toLowerCase() > b.title.toLowerCase() ? -1 : 1;
+        comparisonValue = a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
         break;
       case 'rating':
         comparisonValue = a.rating - b.rating;
