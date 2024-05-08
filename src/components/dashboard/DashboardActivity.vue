@@ -1,4 +1,3 @@
-import MyButton from '@/base/MyButton.vue';
 <template>
   <div class="activity-layout">
     <div class="activity-heading-wrapper">
@@ -14,15 +13,11 @@ import MyButton from '@/base/MyButton.vue';
       </div>
       <div class="activity-bottom">
         <span class="activity-count-label">Today you made 12 Activities </span>
-        <MyButton @click="() => {}">See All Activities</MyButton>
+        <BaseButton @click="() => {}">See All Activities</BaseButton>
       </div>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import MyButton from '@/base/MyButton.vue';
-</script>
 
 <style scoped>
 h2 {

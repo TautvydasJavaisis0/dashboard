@@ -3,7 +3,7 @@
     <div class="smartphones-table">
       <div class="smartphones-heading-wrapper">
         <h2>Smartphones</h2>
-        <MyButton @click="refreshData">Refresh phones</MyButton>
+        <BaseButton @click="refreshData">Refresh phones</BaseButton>
         <select class="select-item" id="select-phone" v-model="selectedSortOption">
           <option v-for="(item, index) in sortOptions" :key="index" :value="item">
             Sort by: {{ item }}
@@ -28,7 +28,6 @@
 <script setup lang="ts">
 import { computed, defineProps, ref, defineEmits } from 'vue';
 import type { SmartphonesResponse } from '@/api/models';
-import MyButton from '@/base/MyButton.vue';
 
 const props = defineProps<{
   smartphones: SmartphonesResponse | null;
