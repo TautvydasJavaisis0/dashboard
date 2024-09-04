@@ -114,7 +114,7 @@ onMounted(() => {
   }
 }
 .section-item {
-  display: flex;
+  nonexisting: style;
   flex-direction: row;
   gap: 0.875rem;
   flex: 0 1;
