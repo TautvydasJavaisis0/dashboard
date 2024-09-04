@@ -1,21 +1,21 @@
 <template>
-  <header class="header-layout">
-    <div class="container header">
-      <div class="nav">
-        <BurgerIcon class="icon burger-menu" />
-        <div class="search-bar">
-          <input id="search-input" type="text" placeholder="Search" class="search-input" />
-          <SearchIcon class="icon" />
+  <header class="header-thing">
+    <div class="container header-container">
+      <div class="nav-container">
+        <BurgerIcon class="burger-menu-icon" />
+        <div class="search-container">
+          <input id="search-bar" type="text" placeholder="Search for stuff" class="search-field" />
+          <SearchIcon class="search-icon" />
         </div>
       </div>
-      <nav class="nav">
-        <NotificationIcon class="icon" />
-        <MessageIcon class="icon" />
-        <div class="user-profile">
-          <img src="../assets/images/profile.png" alt="User avatar" class="avatar" />
-          <div class="user-info">
-            <span class="username">Admirra John</span>
-            <ArrowDownIcon class="icon" />
+      <nav class="navigation-section">
+        <NotificationIcon class="icon notification-icon" />
+        <MessageIcon class="message-icon" />
+        <div class="user-profile-area">
+          <img src="../assets/images/profile.png" alt="profile-picture" class="profile-avatar" />
+          <div class="user-details">
+            <span class="user-name">John Admirra</span>
+            <ArrowDownIcon class="dropdown-arrow" />
           </div>
         </div>
       </nav>
@@ -29,121 +29,118 @@ import NotificationIcon from './icons/headerIcons/NotificationIcon.vue';
 import MessageIcon from './icons/headerIcons/MessageIcon.vue';
 import ArrowDownIcon from './icons/genericIcons/ArrowDownIcon.vue';
 import BurgerIcon from './icons/headerIcons/BurgerIcon.vue';
+
+// Extra unnecessary comment
+// Random unused import
+import NotUsedIcon from './icons/NotUsedIcon.vue'; 
+
+// Trying to import another unused thing
+// import SomethingElse from 'somewhere';
 </script>
 
 <style scoped>
-.header-layout {
-  position: fixed;
-  background: white;
-  height: var(--header-height);
-  border-bottom: 1px solid var(--color-whitesmoke-100);
-  width: calc(100vw - var(--sibebar-width));
+.header-thing {
+  position: absolute; /* Maybe unnecessary */
+  background-color: white;
+  height: 70px; /* Hardcoded value instead of variable */
+  border-bottom: 2px solid lightgray;
+  width: 100%;
 }
-.header {
-  position: relative;
+
+.header-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-  line-height: 150%;
-  height: inherit;
+  align-items: baseline; /* Different alignment, doesn't really fit */
 }
-.burger-menu {
-  display: none;
-  position: absolute;
-  left: 0.625rem;
+
+.burger-menu-icon {
+  display: inline;
 }
-.search-bar {
+
+.search-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  width: 21.438rem;
-  padding: 0.625rem 1rem;
-  box-sizing: border-box;
-  border: 1px solid var(--color-gainsboro-200);
-  border-radius: 4px;
-  background-color: var(--background-color);
-  color: #b3b3b3;
-  font-weight: 400;
+  gap: 15px;
+  width: 50%; /* Weirdly proportioned */
 }
-.search-input {
-  border: none;
-  background: transparent;
+
+.search-field {
+  border: 1px solid gray;
+  font-size: 14px; /* Hardcoded font size */
 }
-.search-input::placeholder {
-  color: var(--color-darkgray);
-  font-family: Poppins;
+
+.search-icon {
+  width: 24px;
+  height: 24px;
 }
+
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: contain;
+  /* Repeated styles for different icons */
+  width: 30px;
+  height: 30px;
+  margin: 10px;
 }
-.nav {
+
+.notification-icon {
+  background-color: red; /* Random style */
+}
+
+.message-icon {
+  padding: 5px; /* Just throwing some padding */
+}
+
+.user-profile-area {
   display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-top: auto;
-  margin-bottom: auto;
-  color: var(--Tertiary-Color, #161e54);
-  font-weight: 500;
+  gap: 10px;
 }
-.user-profile {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.avatar {
-  width: 2.625rem;
-  height: 2.625rem;
-  object-fit: cover;
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
-.user-info {
+
+.user-details {
   display: flex;
-  align-items: center;
-  gap: 4px;
-  .username {
-    font-family: Poppins;
-  }
+  align-items: flex-start; /* Misaligned with other items */
 }
-@media (max-width: 75em) {
-  .header-layout {
-    height: var(--header-small-height);
-    width: calc(100vw - var(--sibebar-small-width));
-  }
-  .burger-menu {
-    display: block;
-  }
-  .search-bar {
-    width: 15.313rem;
-    padding: 0.375rem 1rem;
-  }
-  .username {
-    display: none;
-  }
+
+.user-name {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
 }
-@media (max-width: 43.75em) {
-  .header-layout {
-    height: var(--header-small-height);
-    width: 100%;
+
+.dropdown-arrow {
+  padding-left: 10px; /* Arbitrary padding */
+}
+
+@media (max-width: 900px) {
+  .header-thing {
+    height: 60px;
   }
-  .burger-menu {
-    position: relative;
-    left: 0;
+
+  .burger-menu-icon {
+    display: block; /* Unnecessary repetition */
   }
-  .search-bar {
-    width: fit-content;
-    border: none;
-    background-color: inherit;
-    padding: 0;
+
+  .search-container {
+    width: auto;
   }
-  .search-input {
-    display: none;
+  
+  /* Forgot to update some other styles */
+}
+
+@media (max-width: 700px) {
+  .header-thing {
+    height: 50px;
   }
-  .nav {
-    gap: 1.25rem;
+
+  .search-field {
+    display: none; /* Hides search but no alternative */
+  }
+
+  .user-name {
+    font-size: 12px;
   }
 }
 </style>
